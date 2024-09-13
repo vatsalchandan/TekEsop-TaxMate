@@ -12,7 +12,9 @@ document
     );
     const totalShares = parseInt(document.getElementById("total-shares").value);
     const otherFees = parseFloat(document.getElementById("other-fees").value);
-    const cartaFees = parseFloat(document.getElementById("carta-fees").value);
+    const administrativeFees = parseFloat(
+      document.getElementById("administrative-fees").value
+    );
     const perquisitesTaxRate = parseFloat(
       document.getElementById("perquisites-tax-rate").value
     );
@@ -26,7 +28,7 @@ document
     const capitalGain = (sellingPrice - fmv) * totalShares;
 
     // Taxable Capital Gain
-    const taxableCapitalGain = capitalGain - otherFees - cartaFees;
+    const taxableCapitalGain = capitalGain - otherFees - administrativeFees;
 
     // Paid and Actual Perquisites Tax
     const paidPerquisitesTax = perquisites * (perquisitesTaxRate / 100);
@@ -57,7 +59,6 @@ document
 
     // Display the results
     let resultsHtml = `
-        <p>Perquisites: $${perquisites.toFixed(2)}</p>
         <p>Capital Gain: $${capitalGain.toFixed(2)}</p>
         <p>Taxable Capital Gain: $${taxableCapitalGain.toFixed(2)}</p>
         <p>Capital Gain Tax: $${capitalGainTax.toFixed(2)} (${
