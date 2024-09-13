@@ -100,3 +100,5 @@ document.getElementById("term").addEventListener("change", function () {
     infoIcon.style.display = "none"; // Hide the info icon
   }
 });
+
+console.log("auto deployment is working");
