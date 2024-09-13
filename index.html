@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" crossorigin href="/TekEsop-TaxMate/assets/index-CX1mD1S2.css">
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h1>TekEsop TaxMate</h1>
+      <div class="assumptions">
+        <h2>Assumptions for Stock Grant Tax Calculations:</h2>
+        <ul>
+          <li>
+            <strong>Single Grant Calculation:</strong> All calculations are
+            based on one stock grant.
+          </li>
+          <li>
+            <strong>Income Tax Slab:</strong> A flat tax rate of 30% is assumed
+            for income tax purposes.
+          </li>
+          <li>
+            <strong>Surcharge:</strong> No surcharge is considered in these
+            calculations.
+          </li>
+          <li>
+            <strong>Perquisite Tax:</strong> The company collects perquisite
+            taxes at a rate of 42.74%.(Can be changed in input box)
+          </li>
+          <li><strong>Stock Holding Period:</strong></li>
+          <ul>
+            <li>
+              Unlisted stock is considered short-term if sold within 24 months
+              of acquisition.
+            </li>
+            <li>Short-term capital gains are taxed at a rate of 30%.</li>
+            <li>
+              Long-term capital gains (post-2024 budget) are taxed at a rate of
+              12.5%.
+            </li>
+          </ul>
+          <li>
+            <strong>Exercise Status:</strong> If the stock is classified as
+            long-term, it has already been exercised.
+          </li>
+          <li>
+            <strong>Administrative Fees:</strong> These fees are listed in the
+            Carta system for each stock grant.
+          </li>
+          <li>
+            <strong>Other Fees:</strong> These fees are mentioned in Carta:
+            <ul>
+              <li>One line above the "Cost to Exercise."</li>
+              <li>One line below the "Withholding (Perquisites Taxes)."</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Exercised Stocks:</strong> If the stock has already been
+            exercised, perquisite taxes do not apply. Only capital gains taxes
+            will be considered.
+          </li>
+        </ul>
+      </div>
+      <form id="tax-form">
+        <label for="exercise-price">Exercise Price ($):</label>
+        <input type="number" id="exercise-price" step="0.01" required /><br />
+
+        <label for="fmv">FMV ($):</label>
+        <!-- Updated Label -->
+        <input type="number" id="fmv" step="0.01" required /><br />
+        <!-- Updated Input -->
+
+        <label for="selling-price">Selling Price ($):</label>
+        <input type="number" id="selling-price" step="0.01" required /><br />
+
+        <label for="total-shares">Total Shares:</label>
+        <input type="number" id="total-shares" required /><br />
+
+        <label for="other-fees">Other Fees ($):</label>
+        <input type="number" id="other-fees" step="0.01" required /><br />
+
+        <label for="carta-fees">Carta Fees ($):</label>
+        <input type="number" id="carta-fees" step="0.01" required /><br />
+
+        <label for="perquisites-tax-rate"
+          >Perquisites Tax Rate (%) (Withheld by the company):</label
+        >
+        <input
+          type="number"
+          id="perquisites-tax-rate"
+          step="0.01"
+          value="42.74"
+          required
+        /><br />
+
+        <label for="term">Select Stock Term:</label>
+        <select id="term" required class="dropdown-margin">
+          <option value="short">Short Term</option>
+          <option value="long">Long Term</option>
+        </select>
+        <br />
+
+        <label for="exercised">Were Stocks Already Exercised?</label>
+        <select id="exercised" required class="dropdown-margin">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <br />
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <div id="results"></div>
+    </div>
+    <!-- Disclaimer Section -->
+    <div class="disclaimer">
+      <h3>Disclaimer:</h3>
+      <p>
+        <strong>Personal Use Only:</strong> This tool is intended for personal
+        use to assist with stock-related calculations. While every effort has
+        been made to ensure accuracy, I cannot be held responsible for any
+        errors or miscalculations. Please consult a qualified Chartered
+        Accountant (CA) for final and legally accurate tax calculations.
+      </p>
+      <p>
+        <strong>Privacy Assurance:</strong> No data is collected or tracked by
+        this tool. All calculations are performed locally and securely.
+      </p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
