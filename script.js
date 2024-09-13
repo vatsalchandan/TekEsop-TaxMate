@@ -2,6 +2,7 @@ document
   .getElementById("tax-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    event.stopPropagation();
 
     const exercisePrice = parseFloat(
       document.getElementById("exercise-price").value
