@@ -1,6 +1,8 @@
 # TekEsop-TaxMate
 TekEsop TaxMate is a web-based application designed to simplify the calculation of taxes related to stock grants, including perquisites and capital gains. This tool assists users in evaluating the financial implications of their stock options by considering various tax rates and fees.
 
+Calculator Link: https://vatsalchandan.github.io/TekEsop-TaxMate/
+
 #### Features
 - Input Fields: Users can enter key details such as exercise price, FMV, selling price, total shares, and various fees.
 - Customizable Tax Rates: Allows users to input a custom perquisites tax rate with a default value of 42.74%.
