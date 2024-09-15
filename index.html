@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tax Calculator</title>
+    <script type="module" crossorigin src="/TekEsop-TaxMate/assets/index-jSn59z4c.js"></script>
     <link rel="stylesheet" crossorigin href="/TekEsop-TaxMate/assets/index-CX1mD1S2.css">
   </head>
   <body>
@@ -26,7 +27,12 @@
           </li>
           <li>
             <strong>Perquisite Tax:</strong> The company collects perquisite
-            taxes at a rate of 42.74%.(Can be changed in input box)
+            taxes at a rate of 42.74% (this rate can be adjusted using the input
+            box). When calculating the pending taxes, I account for the
+            difference by adding the actual perquisite tax rate (30%) and then
+            subtracting the previously paid 42.74%. This adjustment results in a
+            lower tax liability since you've already paid 42.74%, which exceeds
+            the required 30%.
           </li>
           <li><strong>Stock Holding Period:</strong></li>
           <ul>
@@ -133,6 +139,5 @@
         this tool. All calculations are performed locally and securely.
       </p>
     </div>
-    <script src="./script.js"></script>
   </body>
 </html>
